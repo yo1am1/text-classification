@@ -5,8 +5,10 @@ import tensorflow as tf
 from keras.datasets import imdb
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+from tensorflow.python.client import device_lib
 
 physical_devices = tf.config.get_visible_devices("GPU")
+print(tf.config.list_physical_devices())
 if not physical_devices:
     print("No GPU available. Switching to CPU.")
 else:
