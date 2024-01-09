@@ -1,7 +1,6 @@
 import re
 
 import gensim.downloader as api
-import joblib
 import nltk
 import numpy as np
 import tensorflow as tf
@@ -12,7 +11,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
 nltk.download("stopwords")
-nltk.download('punkt')
+nltk.download("punkt")
 
 physical_devices = tf.config.get_visible_devices("GPU")
 print(tf.config.list_physical_devices())
@@ -97,7 +96,3 @@ y_pred = classifier.predict(X_test)
 # Evaluate the model
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy}")
-
-# Save the model and word2vec embeddings
-joblib.dump(classifier, "word2vec_classifier.joblib")
-word2vec_model.save("word2vec_model.bin")
